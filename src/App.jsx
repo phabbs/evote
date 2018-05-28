@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 
@@ -18,4 +20,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = () => ({
+  users: '',
+});
+
+const AppConnected = connect(mapStateToProps)(App);
+
+export { AppConnected as App };
